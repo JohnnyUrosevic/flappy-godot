@@ -1,32 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/yellowbird-midflap.png" type="Texture" id=1]
-[ext_resource path="res://sprites/yellowbird-downflap.png" type="Texture" id=2]
-[ext_resource path="res://sprites/yellowbird-upflap.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/base.png" type="Texture" id=4]
 [ext_resource path="res://sprites/pipe-green.png" type="Texture" id=5]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "bird",
-"speed": 5.0
-} ]
-
 [node name="World" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2( 143, 244 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = SubResource( 1 )
-animation = "bird"
-frame = 1
-playing = true
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 145, 196 )
 
 [node name="Base" type="Sprite" parent="."]
 position = Vector2( 143, 456 )

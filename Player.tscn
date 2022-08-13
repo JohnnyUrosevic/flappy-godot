@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/yellowbird-upflap.png" type="Texture" id=1]
 [ext_resource path="res://sprites/yellowbird-midflap.png" type="Texture" id=2]
 [ext_resource path="res://sprites/yellowbird-downflap.png" type="Texture" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -12,11 +13,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Player" type="Node2D"]
-position = Vector2( 143, 244 )
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
+JUMP_SPEED = -300
+GRAVITY = 10
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
