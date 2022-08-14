@@ -1,18 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pipe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/base.png" type="Texture" id=4]
-[ext_resource path="res://sprites/pipe-green.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 168, 55 )
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 145, 196 )
 
-[node name="Base" type="Sprite" parent="."]
-position = Vector2( 143, 456 )
+[node name="Ground" type="StaticBody2D" parent="."]
+z_index = 1
+collision_layer = 4
+
+[node name="Base" type="Sprite" parent="Ground"]
+position = Vector2( 144, 456 )
 texture = ExtResource( 4 )
 
-[node name="Pipe-green" type="Sprite" parent="."]
-position = Vector2( 280, 244 )
-texture = ExtResource( 5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 144, 457 )
+shape = SubResource( 1 )
+
+[node name="Pipe" parent="." instance=ExtResource( 2 )]
+position = Vector2( 275, 324 )
+collision_layer = 2
+SPEED = -100
