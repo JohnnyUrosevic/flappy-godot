@@ -25,6 +25,4 @@ position = Vector2( 144, 457 )
 shape = SubResource( 1 )
 
 [node name="Pipe" parent="." instance=ExtResource( 2 )]
-position = Vector2( 275, 324 )
-collision_layer = 2
-SPEED = -100
+position = Vector2( 278, 431 )
