@@ -7,6 +7,10 @@
 extents = Vector2( 23.5, 159 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 9, 438 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Pipe" type="KinematicBody2D" parent="."]
 position = Vector2( 3, 2 )
