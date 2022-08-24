@@ -1,7 +1,6 @@
 extends Label
 
-var score = 0
+onready var score_singleton = get_node("/root/Score")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	text = String(score)
+func _process(_delta):
+	text = String(score_singleton.score)

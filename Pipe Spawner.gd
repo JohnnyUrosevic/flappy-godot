@@ -6,10 +6,7 @@ export var MAX_PIPE_OFFSET = 50
 var current_time = 0
 
 var scene = load("res://Pipe.tscn")
-var spawn_pos
-
-func _ready():
-	spawn_pos = get_viewport().size.x + 30
+onready var spawn_pos = get_viewport().size.x + 30
 
 func _process(delta):
 	current_time += delta
