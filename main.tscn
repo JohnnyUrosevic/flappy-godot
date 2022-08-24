@@ -33,7 +33,7 @@ shape = SubResource( 1 )
 [node name="Pipe Spawner" type="Node2D" parent="."]
 script = ExtResource( 3 )
 DELAY = 2
-MAX_PIPE_OFFSET = 150
+MAX_PIPE_OFFSET = 100
 
 [node name="Label" type="Label" parent="."]
 margin_left = 125.0
