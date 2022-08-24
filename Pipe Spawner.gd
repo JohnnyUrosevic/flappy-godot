@@ -9,7 +9,7 @@ var scene = load("res://Pipe.tscn")
 var spawn_pos
 
 func _ready():
-	spawn_pos = get_viewport().size.x
+	spawn_pos = get_viewport().size.x + 30
 
 func _process(delta):
 	current_time += delta
