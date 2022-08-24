@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Label.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/base.png" type="Texture" id=4]
 [ext_resource path="res://FlappyBirdy.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://sprites/background-day.png" type="Texture" id=6]
+[ext_resource path="res://GroundScroll.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 168, 55 )
@@ -25,13 +26,23 @@ position = Vector2( 145, 196 )
 z_index = 1
 collision_layer = 4
 
-[node name="Base" type="Sprite" parent="Ground"]
-position = Vector2( 144, 456 )
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2( 144, 457 )
 shape = SubResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Ground"]
+layer = 0
+script = ExtResource( 7 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Ground/ParallaxBackground"]
+motion_mirroring = Vector2( 300, 0 )
+
+[node name="Base" type="Sprite" parent="Ground/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 138, 456 )
+scale = Vector2( 0.965714, 1 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 350, 110 )
 
 [node name="Pipe Spawner" type="Node2D" parent="."]
 script = ExtResource( 3 )
