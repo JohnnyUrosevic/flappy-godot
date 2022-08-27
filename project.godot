@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Score="*res://Score.gd"
+Events="*res://Events.gd"
 
 [display]
 

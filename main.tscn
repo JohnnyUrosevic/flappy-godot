@@ -68,5 +68,3 @@ position = Vector2( 145, 204 )
 scale = Vector2( 1.07986, 1.07986 )
 z_index = -1
 texture = ExtResource( 6 )
-
-[connection signal="game_over" from="Player" to="." method="_on_Player_game_over"]
